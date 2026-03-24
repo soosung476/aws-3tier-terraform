@@ -75,3 +75,39 @@ variable "asg_max_size" {
   type        = number
   default     = 2
 }
+
+variable "db_instance_class" {
+  description = "RDS instance class"
+  type        = string
+  default     = "db.t3.micro"
+}
+
+variable "db_allocated_storage" {
+  description = "RDS allocated storage in GB"
+  type        = number
+  default     = 20
+}
+
+variable "db_name" {
+  description = "Initial database name"
+  type        = string
+  default     = "appdb"
+}
+
+variable "db_username" {
+  description = "Master username for RDS"
+  type        = string
+  default     = "admin"
+}
+
+variable "db_password" {
+  description = "Master password for RDS"
+  type        = string
+  sensitive   = true
+}
+
+variable "db_multi_az" {
+  description = "Whether to enable Multi-AZ for RDS"
+  type        = bool
+  default     = false
+}

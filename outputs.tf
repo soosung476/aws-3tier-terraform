@@ -100,3 +100,16 @@ output "apex_record_fqdn" {
 output "www_record_fqdn" {
   value = try(aws_route53_record.app["app"].fqdn, null)
 }
+output "cloudwatch_dashboard_name" {
+  value = aws_cloudwatch_dashboard.main.dashboard_name
+}
+
+output "cloudwatch_alarm_names" {
+  value = [
+    aws_cloudwatch_metric_alarm.alb_5xx.alarm_name,
+    aws_cloudwatch_metric_alarm.alb_target_response_time.alarm_name,
+    aws_cloudwatch_metric_alarm.alb_unhealthy_hosts.alarm_name,
+    aws_cloudwatch_metric_alarm.rds_cpu.alarm_name,
+    aws_cloudwatch_metric_alarm.rds_free_storage.alarm_name
+  ]
+}

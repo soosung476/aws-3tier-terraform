@@ -127,3 +127,33 @@ variable "certificate_domain" {
   description = "Exact ACM certificate domain to look up, e.g. example.com or *.example.com"
   type        = string
 }
+
+variable "alarm_evaluation_periods" {
+  description = "Number of periods over which data is compared to the specified threshold"
+  type        = number
+  default     = 2
+}
+
+variable "alarm_period_seconds" {
+  description = "Period in seconds over which the specified statistic is applied"
+  type        = number
+  default     = 60
+}
+
+variable "alb_target_response_time_threshold" {
+  description = "ALB target response time threshold in seconds"
+  type        = number
+  default     = 1
+}
+
+variable "rds_cpu_threshold" {
+  description = "RDS CPUUtilization alarm threshold"
+  type        = number
+  default     = 80
+}
+
+variable "rds_free_storage_threshold_bytes" {
+  description = "RDS FreeStorageSpace alarm threshold in bytes"
+  type        = number
+  default     = 2147483648
+}

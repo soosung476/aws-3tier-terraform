@@ -3,3 +3,7 @@ environment  = "dev"
 project_name = "aws-3tier-terraform"
 
 db_password = "change-me"
+
+domain_name        = "example.com"
+record_name        = "www"
+certificate_domain = "*.example.com"

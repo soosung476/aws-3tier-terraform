@@ -6,3 +6,6 @@ locals {
   az_2a = "${var.aws_region}a"
   az_2c = "${var.aws_region}c"
 }
+locals {
+  app_fqdn = var.record_name == "" ? var.domain_name : "${var.record_name}.${var.domain_name}"
+}

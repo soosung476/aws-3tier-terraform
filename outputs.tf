@@ -73,3 +73,30 @@ output "rds_port" {
 output "rds_db_name" {
   value = aws_db_instance.mysql.db_name
 }
+
+output "app_fqdn" {
+  value = local.app_fqdn
+}
+
+output "app_url" {
+  value = "https://${local.app_fqdn}"
+}
+
+output "acm_certificate_arn" {
+  value = data.aws_acm_certificate.selected.arn
+}
+
+
+output "route53_record_fqdns" {
+  value = {
+    for k, v in aws_route53_record.app : k => v.fqdn
+  }
+}
+
+output "apex_record_fqdn" {
+  value = try(aws_route53_record.app["apex"].fqdn, null)
+}
+
+output "www_record_fqdn" {
+  value = try(aws_route53_record.app["app"].fqdn, null)
+}

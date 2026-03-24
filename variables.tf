@@ -111,3 +111,19 @@ variable "db_multi_az" {
   type        = bool
   default     = false
 }
+
+variable "domain_name" {
+  description = "Root domain in Route 53, e.g. example.com"
+  type        = string
+}
+
+variable "record_name" {
+  description = "Subdomain label only. Use empty string for apex/root, or e.g. www/app"
+  type        = string
+  default     = ""
+}
+
+variable "certificate_domain" {
+  description = "Exact ACM certificate domain to look up, e.g. example.com or *.example.com"
+  type        = string
+}

@@ -1,3 +1,4 @@
+# 자주 사용하게 되는 입력값들은 variables에 저장한다. 
 variable "aws_region" {
   description = "AWS region"
   type        = string

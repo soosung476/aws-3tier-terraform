@@ -1,3 +1,7 @@
+# output의 의미
+# terraform apply 를 하고나면 콘솔에 output값이 나온다
+# 아직 모듈화 하진 않았지마 모듈화 할 때 부모와 자식간의 값을 참조하는데 output이 사용된다고 한다
+# terraform 이외의 다른 도구에다가 값을 넘길 때 output이 활용된다고 한다
 output "vpc_id" {
   value = aws_vpc.main.id
 }

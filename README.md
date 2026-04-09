@@ -24,6 +24,14 @@ ChatGpt의 도움을 받아서 3tier 구축을 완료했으나 terraform 문법,
 - locals.tf
 - provider.tf
 - versions.tf
+- alb.tf
+
+### 앞으로 해야할 문서
+- compute.tf
+- iam.tf
+- rds.tf
+- dns.tf
+- cloudwatch.tf
 
 ---
 
